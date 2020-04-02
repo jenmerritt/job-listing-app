@@ -172,7 +172,7 @@
     }
     
     .job-col2-row3{
-        font-size: 12px;
+        font-size: 10px;
         color: #5a5858;
         display: flex;
         flex-direction: row;
@@ -185,7 +185,7 @@
     .job-line{
         border: 1px solid #888;
         width: 100%;
-        margin: 20px 0 20px 0;
+        margin: 20px 0 10px 0;
       }
     
     .job-column-3{
@@ -197,13 +197,14 @@
     }
     
     .job-col3-row{
-        margin-right: 20px;
+        margin-right: 15px;
+        margin-top: 20px;
         height: 20px;
         padding: 8px 5px 0px 5px;
         background-color: hsl(180, 31%, 95%);
         border-radius: 5px;
         color: hsl(180, 29%, 50%);
-        font-size: 14px;
+        font-size: 12px;
         font-weight:bold;
     }
   }
