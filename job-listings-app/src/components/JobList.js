@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from "react-redux";
 import { getData } from "../actions/actions";
 import Job from "./Job";
+import './JobList.css';
 
 
 export class JobList extends Component {
@@ -16,7 +17,7 @@ export class JobList extends Component {
   render() {
     return (
       <>
-      <ul>
+      <ul id="job-list">
         {this.props.jobs.map(job => (
             <Job key={job.id} job={job} />
           ))}

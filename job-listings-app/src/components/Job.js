@@ -10,18 +10,22 @@ function Job({job}){
             </div>
             <div className="job-column-2">
                 <div className="job-col2-row1">
-                    {job.new ? <div>New!</div> : null}
-                    {job.featured ? <div>Featured</div> : null}
+                    <div className="job-c2-r1-item">{job.company}</div>
+                    {job.new ? <div className="job-c2-r1-item new-badge">NEW!</div> : null}
+                    {job.featured ? <div className="job-c2-r1-item featured-badge">FEATURED</div> : null}
                 </div>
                 <div className="job-col2-row2">
-                    {job.company}
+                    {job.position}
                 </div>
                 <div className="job-col2-row3">
-                    {job.postedAt}
-                    {job.contract}
-                    {job.location}
+                    <div className="job-c2-r3-item">{job.postedAt}</div>
+                    <div className="job-c2-r3-item">&#8226;</div>
+                    <div className="job-c2-r3-item">{job.contract}</div>
+                    <div className="job-c2-r3-item">&#8226;</div>
+                    <div className="job-c2-r3-item">{job.location}</div>
                 </div>
             </div>
+            <hr className="job-line" />
             <div className="job-column-3">
                 {job.hasOwnProperty('tools') ? job.tools.map(tool => <div className="job-col3-row">{tool}</div>) : null}
                 {job.hasOwnProperty('languages') ? job.languages.map(language => <div className="job-col3-row">{language}</div>) : null}
