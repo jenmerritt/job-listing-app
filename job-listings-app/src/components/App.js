@@ -6,7 +6,7 @@ function App() {
   return (
     <>
       <section>
-        <h1>Header</h1>
+        <h1>Header Bar from design</h1>
       </section>
       <section>
         <JobList />

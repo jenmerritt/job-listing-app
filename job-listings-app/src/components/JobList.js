@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
 import { getData } from "../actions/actions";
+import Job from "./Job";
 
 
 export class JobList extends Component {
@@ -17,7 +18,7 @@ export class JobList extends Component {
       <>
       <ul>
         {this.props.jobs.map(job => (
-            <li key={job.id}>{job.company}</li>
+            <Job key={job.id} job={job} />
           ))}
       </ul>
     </>
