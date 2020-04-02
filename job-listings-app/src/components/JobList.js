@@ -6,9 +6,6 @@ import './JobList.css';
 
 
 export class JobList extends Component {
-  constructor(props) {
-    super(props);
-  }
 
   componentDidMount() {
     this.props.getData();

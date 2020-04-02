@@ -6,7 +6,7 @@ function Job({job}){
     return(
         <li className={job.featured ? "featured-job individual-job" : "individual-job"}>
             <div className="job-column-1">
-                <img src={job.logo} />
+                <img alt="logo" src={job.logo} />
             </div>
             <div className="job-column-2">
                 <div className="job-col2-row1">
