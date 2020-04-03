@@ -3,6 +3,7 @@
 @media only screen and (min-width: 700px) {
     .individual-job{
         width: 80%;
+        border-radius: 5px;
         display:flex;
         min-width: 600px;
         flex-direction: row;
@@ -112,7 +113,7 @@
         margin: 0 auto;
         display:flex;
         flex-direction: column;
-        margin-bottom: 80px;
+        margin-top: 60px;
         min-height: 200px;
         background-color: #ffffff;
         padding: 35px;

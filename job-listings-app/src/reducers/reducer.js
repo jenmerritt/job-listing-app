@@ -2,7 +2,7 @@ import { DATA_LOADED } from "../constants/action-types";
 
 const initialState = {
   jobs: [],
-  selectedFilters: []
+  selectedFilters: [{filter: "React"}, {filter: "CSS"}, {filter: "CSS"}, {filter: "React"}, {filter: "CSS"}]
 };
 
 function rootReducer(state = initialState, action) {
