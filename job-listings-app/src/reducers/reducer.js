@@ -19,6 +19,16 @@ function rootReducer(state = initialState, action) {
     }
   }
   if(action.type === ADD_FILTER){
+    let filters = state.selectedFilters
+
+    let findFilter = (filter) => {
+      return filter.title === action.payload.title
+    }
+    if(filters.find(findFilter)){
+      return {
+        ...state
+      }
+    }
     return{
       ...state,
       selectedFilters: [...state.selectedFilters, action.payload]
