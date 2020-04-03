@@ -1,5 +1,7 @@
 import React from 'react';
 import './Job.css';
+import {addFilter} from '../actions/actions';
+import store from "../store/store";
 
 function Job({job}){
 
@@ -27,11 +29,9 @@ function Job({job}){
             </div>
             <hr className="job-line" />
             <div className="job-column-3">
-                {job.hasOwnProperty('tools') ? job.tools.map(tool => <div className="job-col3-row">{tool}</div>) : null}
-                {job.hasOwnProperty('languages') ? job.languages.map(language => <div className="job-col3-row">{language}</div>) : null}
+                {job.hasOwnProperty('tools') ? job.tools.map(tool => <div onClick={() => store.dispatch(addFilter(tool))} className="job-col3-row">{tool}</div>) : null}
+                {job.hasOwnProperty('languages') ? job.languages.map(language => <div onClick={() => store.dispatch(addFilter(language))} className="job-col3-row">{language}</div>) : null}
             </div>
-            
-
         </li>
     )
 

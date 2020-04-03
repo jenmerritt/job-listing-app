@@ -101,6 +101,18 @@
         font-size: 14px;
         font-weight:bold;
     }
+
+    .job-col3-row{
+        cursor: pointer;
+        margin-right: 25px;
+        height: 20px;
+        padding: 8px 10px 0px 10px;
+        background-color: hsl(180, 31%, 95%);
+        border-radius: 5px;
+        color: hsl(180, 29%, 50%);
+        font-size: 14px;
+        font-weight:bold;
+    }
   }
 
 
@@ -198,6 +210,19 @@
     }
     
     .job-col3-row{
+        margin-right: 15px;
+        margin-top: 20px;
+        height: 20px;
+        padding: 8px 5px 0px 5px;
+        background-color: hsl(180, 31%, 95%);
+        border-radius: 5px;
+        color: hsl(180, 29%, 50%);
+        font-size: 12px;
+        font-weight:bold;
+    }
+
+    .job-col3-row:hover{
+        cursor: pointer;
         margin-right: 15px;
         margin-top: 20px;
         height: 20px;
