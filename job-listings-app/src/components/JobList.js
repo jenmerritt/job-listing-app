@@ -12,21 +12,34 @@ export class JobList extends Component {
   }
 
   render() {
-    return (
+      if(this.props.selectedFilters.length === 0){
+      return (
+        <>
+        <ul id="job-list">
+          {this.props.allJobs.map(job => (
+              <Job key={job.id} job={job} />
+            ))}
+        </ul>
+      </>
+        );
+    }
+    return(
       <>
-      <ul id="job-list">
-        {this.props.jobs.map(job => (
-            <Job key={job.id} job={job} />
-          ))}
-      </ul>
-    </>
-      );
+        <ul id="job-list">
+          {this.props.filteredJobs.map(job => (
+              <Job key={job.id} job={job} />
+            ))}
+        </ul>
+      </>
+    )
   }
 }
 
 function mapStateToProps(state) {
     return {
-      jobs: state.jobs
+      allJobs: state.allJobs,
+      selectedFilters: state.selectedFilters,
+      filteredJobs: state.filteredJobs
     };
   }
 
@@ -34,33 +47,3 @@ export default connect(
   mapStateToProps,
   { getData }
 )(JobList);
-
-
-
-// function JobList({jobs}) {
-
-//   useEffect(() =>{
-//     getData();
-//   })
-
-//     return(
-//       <>
-//       <ul>
-//         {jobs.map(job => (
-//             <li key={job.id}>{job.company}</li>
-//           ))}
-//       </ul>
-//     </>
-//     )
-// }
-
-// function mapStateToProps(state) {
-//   return {
-//     jobs: state.jobs
-//   };
-// }
-
-// export default connect(
-// mapStateToProps,
-// { getData }
-// )(JobList);

@@ -29,6 +29,8 @@ function Job({job}){
             </div>
             <hr className="job-line" />
             <div className="job-column-3">
+                <div onClick={() => store.dispatch(addFilter(job.level))} className="job-col3-row">{job.level}</div>
+                <div onClick={() => store.dispatch(addFilter(job.role))} className="job-col3-row">{job.role}</div>
                 {job.hasOwnProperty('tools') ? job.tools.map(tool => <div onClick={() => store.dispatch(addFilter(tool))} className="job-col3-row">{tool}</div>) : null}
                 {job.hasOwnProperty('languages') ? job.languages.map(language => <div onClick={() => store.dispatch(addFilter(language))} className="job-col3-row">{language}</div>) : null}
             </div>
