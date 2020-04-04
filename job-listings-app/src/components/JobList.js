@@ -15,7 +15,7 @@ export class JobList extends Component {
       if(this.props.selectedFilters.length === 0){
       return (
         <>
-        <ul id="job-list">
+        <ul className="job-list">
           {this.props.allJobs.map(job => (
               <Job key={job.id} job={job} />
             ))}
@@ -25,7 +25,7 @@ export class JobList extends Component {
     }
     return(
       <>
-        <ul id="job-list">
+        <ul className="job-list">
           {this.props.filteredJobs.map(job => (
               <Job key={job.id} job={job} />
             ))}

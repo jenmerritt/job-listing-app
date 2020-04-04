@@ -1,5 +1,5 @@
 @media only screen and (min-width: 700px) {
-    #job-list{
+    .job-list{
         display: flex;
         align-items: center;
         flex-direction: column;
@@ -10,7 +10,7 @@
 }
 
 @media only screen and (max-width: 699px) {
-    #job-list{
+    .job-list{
         display: flex;
         flex-direction: column;
         width: 100%;

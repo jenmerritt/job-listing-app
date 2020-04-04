@@ -12,14 +12,14 @@ function ConnectedApp({selectedFilters}) {
 
   return (
     <section id="main-wrapper">
-      <article id="header">
-      </article>
-      <article>
+      <div id="header">
+      </div>
+      <div>
         {selectedFilters.length ? <Filter /> : null}
-      </article>
-      <article id="job-list">
+      </div>
+      <div id="job-list">
         <JobList />
-      </article>
+      </div>
     </section>
   );
 
