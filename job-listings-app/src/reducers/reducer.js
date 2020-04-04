@@ -49,10 +49,16 @@ function rootReducer(state = initialState, action) {
 
   if(action.type === REMOVE_FILTER){
     let filteredArray = state.selectedFilters.filter(function(filter){return filter.title !== action.payload.title.title})
-    return{
+    state = {
       ...state,
-      selectedFilters: filteredArray
-    }    
+      selectedFilters: filteredArray,
+      filteredJobs: []
+    } 
+    const filteredList = updateFilteredJobsList();
+    return {
+      ...state,
+      filteredJobs: filteredList
+    }  
   }
   return state;
 
