@@ -11,7 +11,7 @@ const mapStateToProps = state => {
 function ConnectedApp({selectedFilters}) {
 
   return (
-    <section id="main-wrapper">
+    <div id="main-wrapper">
       <div id="header">
       </div>
       <div>
@@ -20,7 +20,7 @@ function ConnectedApp({selectedFilters}) {
       <div id="job-list">
         <JobList />
       </div>
-    </section>
+    </div>
   );
 
 }
