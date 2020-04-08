@@ -14,6 +14,7 @@ function rootReducer(state = initialState, action) {
       allJobs: action.payload
     }
   }
+
   if(action.type === CLEAR_FILTERS){
     return{
       ...state,
@@ -23,53 +24,50 @@ function rootReducer(state = initialState, action) {
   }
 
   if(action.type === ADD_FILTER){
-    let filters = state.selectedFilters
+      let filters = [...state.selectedFilters]
 
-    let findFilter = (filter) => {
-      return filter.title === action.payload.title
-    }
-    if(filters.find(findFilter)){
-      return {
-        ...state
+      let findFilter = (filter) => {
+        return filter.title === action.payload.title
+       }
+      
+      if(filters.find(findFilter)){
+        return {
+          ...state
+        }
+      } else {
+      
+        let updatedFilters = [...state.selectedFilters, action.payload]
+        const filteredList = updateFilteredJobsList(updatedFilters);
+
+        return {
+          ...state,
+          selectedFilters: updatedFilters,
+          filteredJobs: filteredList
+        }
       }
     }
-    else{
-      state = {
-        ...state,
-        selectedFilters: [...state.selectedFilters, action.payload],
-        filteredJobs: []
-      }
-      const filteredList = updateFilteredJobsList();
-      return {
-        ...state,
-        filteredJobs: filteredList
-      }
-    }
-  }
 
   if(action.type === REMOVE_FILTER){
-    let filteredArray = state.selectedFilters.filter(function(filter){return filter.title !== action.payload.title.title})
-    state = {
-      ...state,
-      selectedFilters: filteredArray,
-      filteredJobs: []
-    } 
-    const filteredList = updateFilteredJobsList();
-    return {
-      ...state,
-      filteredJobs: filteredList
-    }  
-  }
-  return state;
+      let selectedFilters = [...state.selectedFilters]
+      let filteredArray = selectedFilters.filter(function(filter){return filter.title !== action.payload.title.title})
 
-  function updateFilteredJobsList(){
-    const filters = state.selectedFilters;
-    const filteredList = state.filteredJobs;
-    const jobs = state.allJobs;
+      const filteredList = updateFilteredJobsList(filteredArray);
+      return {
+        ...state,
+        selectedFilters: filteredArray,
+        filteredJobs: filteredList
+      }  
+    }
+  
+    return state;
+
+  function updateFilteredJobsList(updatedFilters){
+    const filteredList = [];
+    const jobs = [...state.allJobs];
     
     jobs.forEach(job => {
       let isIncluded = true;
-      for(let filter of filters){
+      for(let filter of updatedFilters){
         switch(true){
           case job.role === filter.title:
           case job.level === filter.title:
@@ -86,7 +84,6 @@ function rootReducer(state = initialState, action) {
     return filteredList;
   }
 
-  
 }
 
 export default rootReducer;
